@@ -75,7 +75,7 @@ int verificaOrdenado(tipoLista *lista) {
         for (int i = 0; i < lista->tamanho - 1; i++){
             if (lista->item[i].chave < lista->item[i+1].chave) {
                 crescente = 1;
-            } else {
+            } else if(lista->item[i].chave > lista->item[i+1].chave) {
                 decrescente = 2;
             }
         }
@@ -94,16 +94,16 @@ int verificaOrdenado(tipoLista *lista) {
 void exibeOdernacao(tipoLista *lista) {
     switch (verificaOrdenado(lista)) {
         case 0:
-            printf("LISTA VAZIA");
+            printf("LISTA VAZIA\n");
             break;
         case 1:
-            printf("CRESCENTE");
+            printf("CRESCENTE\n");
             break;
         case 2:
-            printf("DECRESCENTE");
+            printf("DECRESCENTE\n");
             break;
         case -1:
-            printf("NÃO ORDENADA");
+            printf("NAO ORDENADA\n");
     }
 }
 
