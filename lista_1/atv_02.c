@@ -103,7 +103,7 @@ void exibeOdernacao(tipoLista *lista) {
             printf("DECRESCENTE");
             break;
         case -1:
-            printf("DESORDENADA");
+            printf("NÃO ORDENADA");
     }
 }
 
