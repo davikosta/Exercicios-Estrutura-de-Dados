@@ -70,7 +70,7 @@ void insereLista(tipoLista *lista, int p, int x)
 
 int verificaOrdenado(tipoLista *lista) {
         
-    int crescente = 0, decrescente = 0;
+    int crescente = 1, decrescente = 2;
     if (lista->tamanho == 1 ) {
         return 1;
     }
@@ -79,10 +79,10 @@ int verificaOrdenado(tipoLista *lista) {
 
         for (int i = 0; i < lista->tamanho - 1; i++){
 
-            if (lista->item[i].chave < lista->item[i+1].chave || lista->item[i].chave == lista->item[i+1].chave) {
-                crescente = 1;
-            } else if(lista->item[i].chave > lista->item[i+1].chave) {
-                decrescente = 2;
+            if (lista->item[i].chave < lista->item[i+1].chave && lista->item[i].chave != lista->item[i+1].chave) {
+                decrescente = 0;
+            } else if(lista->item[i].chave > lista->item[i+1].chave && lista->item[i].chave != lista->item[i+i].chave) {
+                crescente = 0;
             }
         }
         
