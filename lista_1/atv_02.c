@@ -69,16 +69,23 @@ void insereLista(tipoLista *lista, int p, int x)
 }
 
 int verificaOrdenado(tipoLista *lista) {
-
+        
     int crescente = 0, decrescente = 0;
-    if (lista->tamanho > 0) {
+    if (lista->tamanho == 1 ) {
+        return 1;
+    }
+
+    if (lista->tamanho > 1) {
+
         for (int i = 0; i < lista->tamanho - 1; i++){
-            if (lista->item[i].chave < lista->item[i+1].chave) {
+
+            if (lista->item[i].chave < lista->item[i+1].chave || lista->item[i].chave == lista->item[i+1].chave) {
                 crescente = 1;
             } else if(lista->item[i].chave > lista->item[i+1].chave) {
                 decrescente = 2;
             }
         }
+        
         if (crescente == 1 && decrescente == 0) {
             return crescente;
         } else if (crescente == 0 && decrescente == 2) {
@@ -111,11 +118,11 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    tipoLista lista;
+    tipoLista l1;
 
-    inicializaLista(&lista, obtemN());
+    inicializaLista(&l1, obtemN());
 
-    exibeOdernacao(&lista);
+    exibeOdernacao(&l1);
 
     return 0;
 }
