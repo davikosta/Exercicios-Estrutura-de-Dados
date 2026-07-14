@@ -25,18 +25,17 @@ void inicializaLista(tipo_lista *lista, int tamanho) {
 }
 
 int comparaLista(tipo_lista *lista1, tipo_lista *lista2) {
-
-    int igual = 1;
+   
+    if (lista1->tamanho != lista2->tamanho) {return 1;}
     
     if (lista1->tamanho == lista2->tamanho) {
 
         for (int i = 0; i < lista1->tamanho; i++) {
-            if (lista1->item[i].chave == lista2->item[i].chave) {igual = 0;}
-            else {igual = 1;}
+            if (lista1->item[i].chave != lista2->item[i].chave) {return 1;}
         }
     }
 
-    return igual;
+    return 0;
 }
 
 int main() {
@@ -58,7 +57,7 @@ int main() {
             break;
         case 1:
             printf("LISTAS DIFERENTES\n");
-            break;
+            break;  
         default:
             printf("Erro no retorno da função");
             break;
