@@ -39,7 +39,7 @@ int comparaLista(tipo_lista *lista1, tipo_lista *lista2) {
     return igual;
 }
 
-void main() {
+int main() {
 
     int n1, n2;
 
@@ -54,13 +54,15 @@ void main() {
     switch (comparaLista(&l1, &l2)) {
 
         case 0:
-            printf("LISTAS IGUAIS");
+            printf("LISTAS IGUAIS\n");
             break;
         case 1:
-            printf("LISTAS DIFERENTES");
+            printf("LISTAS DIFERENTES\n");
             break;
         default:
             printf("Erro no retorno da função");
             break;
     }
+
+    return 0;
 }
